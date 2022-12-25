@@ -13,6 +13,12 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/nothing/Spacewar/Spacewar-vendor.mk)
 
+# Google Play system updates support
+$(call inherit-product-if-exists, vendor/pixel-additional/config.mk)
+
+# CarrierSettings
+$(call inherit-product-if-exists, vendor/pixel-additional/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \

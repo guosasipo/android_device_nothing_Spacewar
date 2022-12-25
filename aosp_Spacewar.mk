@@ -14,6 +14,15 @@ $(call inherit-product, device/nothing/Spacewar/device.mk)
 # Inherit some common PixelExperience stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
+# Add CarrierSettings
+TARGET_INCLUDE_CARRIER_SETTINGS := true
+
+# Add Google Play system updates support
+TARGET_FLATTEN_APEX := false
+
+# Include additional Gapps like Drive, Maps, Gmail, Tips
+TARGET_INCLUDE_ADDITIONAL_GAPPS := true
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_Spacewar
 PRODUCT_DEVICE := Spacewar
